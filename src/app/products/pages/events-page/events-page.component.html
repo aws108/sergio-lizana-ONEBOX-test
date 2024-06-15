@@ -1,0 +1,27 @@
+<div class="container">
+    <app-header></app-header>
+    <div class="container-cards">
+        <div *ngFor="let event of events" class="space-between-cards">
+            <div class="custom-card">
+                <div class="card-header">
+                    <h2 class="selectable" [routerLink]="['/products/details', event.id]">{{event.title}}</h2>
+                    <h4 class="selectable" [routerLink]="['/products/details', event.id]">{{event.subtitle}}</h4>
+                </div>
+                <div class="content-card">
+                    <div class="container-image"> 
+                        <img src={{event.image}} alt={{event.title}} [routerLink]="['/products/details', event.id]">
+                    </div>
+                    <div class="date-container">
+                        <p>{{event.startDate}} - {{event.endDate}}</p>
+                    </div>
+                    <div class="container-description hide-on-mobile">
+                        <div [innerHTML]="event.description"></div>  
+                    </div>
+                    <div class="container-button hide-on-mobile">
+                        <button [routerLink]="['/products/details', event.id]" class="comprar-button">Comprar</button>
+                    </div>               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+
+<div *ngIf="showCartInfo.length > 0" class="cart-container">
+    <div *ngFor="let cartInfo of showCartInfo">
+        <div>
+            <h2>{{cartInfo.titleEvent}}</h2>
+        </div>
+        <div *ngIf="cartInfo && cartInfo.quantitySelected != null && cartInfo.quantitySelected >= 1"  class="info-container">
+            <div class="cart-date">
+                {{cartInfo.dateSelected}}
+            </div>
+            <div class="quantity-trash">
+                <div class="cart-quantity">
+                    x{{cartInfo.quantitySelected}} 
+                </div>
+                <div class="cart-trash">
+                    <div (click)="deleteCartInfo(cartInfo)"><img src="assets/img/trash.png"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+

@@ -1,0 +1,25 @@
+.cart-container {
+    padding: 10px;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    width:100%;
+}
+
+.cart-date, .cart-quantity, .cart-trash {
+    margin-right: 20px;
+}
+
+.cart-trash img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.quantity-trash{
+    display: flex;
+    justify-content: right;
+    width: 100%;
+}

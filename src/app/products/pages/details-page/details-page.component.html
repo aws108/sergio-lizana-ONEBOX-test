@@ -1,0 +1,26 @@
+<div class="container-details">
+    <app-header></app-header>
+    <div class="container-back">
+        <button class="back-button" [routerLink]="['/products/events']" (click)="finishShopping()">Volver</button>
+    </div>
+    <div *ngIf="errorMessage" class="container-error">
+        {{errorMessage}}
+    </div>
+    <div *ngIf="!errorMessage" class="container-info">
+        <div class="container-sessions">
+            <div *ngFor="let session of sessionsInfo; let i=index" class="sessions-item">
+                <ul>Fecha: {{session.date}}, Disponibilidad: {{session.availability}}</ul>
+                <div class="number-picker">
+                    <button (click)="decrease(i)">-</button>
+                    <input type="number" [(ngModel)]="session.quantity" readonly>
+                    <button (click)="increase(i)">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-cart">
+            <app-shopping-cart></app-shopping-cart>
+        </div>
+    </div>
+</div>
+
+
